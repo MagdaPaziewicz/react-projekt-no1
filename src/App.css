@@ -1,38 +1,301 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Roboto;
+  src: url(Roboto-Light.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container_everything {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.nav {
+  background: darkslategray;
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 2;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+  font-size: 2rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links-clik {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.nav-links-clik:nth-child(1) {
+  margin: 50px;
+}
+
+.nav-links-clik:nth-child(2) {
+  margin-right: 50px;
+}
+
+.nav-links-clik:last-child {
+  cursor: not-allowed;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+  z-index: 1;
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+.header_wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  padding-right: 400px;
+  line-height: 1.5;
+}
+
+.title_header {
+  padding: 0;
+  font-size: 3.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.text_header {
+  margin: 50px 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.header_link_offer {
+  width: 200px;
+  padding: 10px 40px;
+  border: 3px solid white;
+  background: none;
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 2px;
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.header_link_offer:hover {
+  color: black;
+  background: white;
+}
+
+/* O NAS */
+
+.about_us {
+  padding: 40px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title_about_us {
+  margin-left: 20px;
+  font-size: 4rem;
+  text-align: left;
+}
+
+.specialists_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 30px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+
+.photo {
+  max-width: 500px;
+  width: 20%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: top;
+  border-radius: 50%;
+}
+
+
+.box:nth-child(1) .photo {
+  background-image: url(woman.jpg);
+}
+
+.box:nth-of-type(odd) .photo {
+  text-align: left;
+}
+
+.box:nth-child(2) .photo {
+  background-image: url(man.jpg);
+}
+
+
+.box:nth-of-type(even) .photo {
+  text-align: right;
+  order: 2;
+}
+
+
+.about_people {
+  width: 75%;
+}
+
+.surname {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.description {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+}
+
+.box:nth-child(2) .about_people {
+  text-align: right;
+}
+
+/*OFERTA*/
+
+.offer {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 40px 0;
+  height: 93vh;
+  background-color: #405d78;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title_offer {
+  height: 20%;
+  padding: 20px 0;
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  font-size: 3.6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.offer_wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.offer_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  aspect-ratio: 1/1;
+  margin: 35px;
+  background-color: white;
+  transition-duration: 0.5s
+}
+
+.square:hover {
+  transform: scale(1.05);
+}
+
+.square:first-child {
+  position: relative;
+  text-align: center;
+}
+
+.square:first-child .dot {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  border-radius: 50%;
+}
+
+.service {
+  font-size: 2.4rem;
+  color: black;
+}
+
+.nowość {
+  font-size: 1.4rem;
+  color: black;
+}
+
+.footer {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: darkslategray;
+  color: white;
+}
+
+.footer_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer_text {
+  font-size: 2rem;
+}
+.social_media {
+  font-size: 4rem;
+}
+
+.social_media .fa-brands:first-child {
+  margin-right: 20px;
+}
+
+.fa-brands {
+  font-family: "Font Awesome 5 Brands";
 }
